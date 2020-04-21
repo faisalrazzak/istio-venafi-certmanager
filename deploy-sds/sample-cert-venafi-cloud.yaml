@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: v2-credentials
+  namespace: istio-system
+spec:
+  secretName: v2-credentials
+  issuerRef:
+    name: cloud-venafi-issuer
+    kind: ClusterIssuer
+  commonName: <sample-cert-name>
+  dnsNames:
+  - <sample-cert-name>
