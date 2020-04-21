@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: cloud-venafi-issuer
+  namespace: cert-manager
+spec:
+  venafi:
+    zone: "<zone-identifier>" # Set this to the Venafi policy zone you want to use
+    cloud:
+        apiTokenSecretRef:
+          name: cloud-secret # Set this to cloud-secret providing access to Venafi Cloud
+          key: apikey
